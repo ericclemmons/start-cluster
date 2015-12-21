@@ -16,7 +16,9 @@ describe("cluster", function() {
       expect(function() {
         var error = util.format("Cannot find module '%s/foo.js'", process.cwd());
 
-        cluster.start("foo.js", error);
+        expect(function() {
+          return cluster.start("foo.js");
+        }).toThrow(error);
       })
     });
 
@@ -24,7 +26,9 @@ describe("cluster", function() {
       expect(function() {
         var error = util.format("Cannot find module 'path/to/foo.js'", process.cwd());
 
-        cluster.start("/path/to/foo.js", error);
+        expect(function() {
+          return cluster.start("/path/to/foo.js");
+        }).toThrow(error);
       })
     });
   });
