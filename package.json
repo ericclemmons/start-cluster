@@ -1,0 +1,34 @@
+{
+  "name": "start-cluster",
+  "description": "Start a Node cluster by simply running `start-cluster`",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ericclemmons/start-cluster.git"
+  },
+  "keywords": [
+    "node",
+    "cluster",
+    "simple",
+    "server"
+  ],
+  "author": "Eric Clemmons <eric@smarterspam.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ericclemmons/start-cluster/issues"
+  },
+  "homepage": "https://github.com/ericclemmons/start-cluster#readme",
+  "devDependencies": {
+    "cz-conventional-changelog": "1.1.5",
+    "semantic-release": "^4.3.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
