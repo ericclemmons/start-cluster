@@ -1,7 +1,8 @@
 {
   "name": "start-cluster",
   "description": "Start a Node cluster by simply running `start-cluster`",
-  "main": "index.js",
+  "bin": "bin/start-cluster.js",
+  "main": "src/cluster.js",
   "scripts": {
     "coverage": "npm test && nyc report --reporter=text-lcov | coveralls",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
