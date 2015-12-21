@@ -3,8 +3,9 @@
   "description": "Start a Node cluster by simply running `start-cluster`",
   "main": "index.js",
   "scripts": {
-    "test": "npm test",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "coverage": "npm test && nyc report --reporter=text-lcov | coveralls",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "test": "nyc mocha"
   },
   "repository": {
     "type": "git",
@@ -23,12 +24,17 @@
   },
   "homepage": "https://github.com/ericclemmons/start-cluster#readme",
   "devDependencies": {
+    "coveralls": "2.11.6",
     "cz-conventional-changelog": "1.1.5",
+    "expect": "1.13.4",
+    "mocha": "2.3.4",
+    "nyc": "5.0.1",
     "semantic-release": "^4.3.5"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "dependencies": {}
 }
